@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { ShopModalProvider } from '@/components/shop/shop-modal-provider'
@@ -93,6 +94,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <ShopModalProvider>{children}</ShopModalProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
+        <SpeedInsights />
       </body>
     </html>
   )
